@@ -29,11 +29,13 @@ class MyHomePage extends StatefulWidget {
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
+
 }
 
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
@@ -43,22 +45,25 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             PinEntryField(
+              onSubmit: (text) {
+                print(text);
+              },
               fieldCount: 4,
               fieldWidth: 50,
               height: 60,
               fieldStyle: PinEntryStyle(
-                textStyle: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
-                  fontWeight: FontWeight.w600
-                ),
+                  textStyle: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                      fontWeight: FontWeight.w600
+                  ),
                   fieldBackgroundColor: Colors.orangeAccent,
                   fieldBorder: Border.all(
                     color: Colors.pink,
                     width: 2,
                   ),
-                fieldBorderRadius: BorderRadius.circular(10),
-                fieldPadding: 20
+                  fieldBorderRadius: BorderRadius.circular(10),
+                  fieldPadding: 20
               ),
             )
           ],
