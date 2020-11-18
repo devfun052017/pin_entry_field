@@ -30,10 +30,10 @@ PinEntryField(
 )
 ```
 ## About PinInputType.none
-<img src="images/1.png" width="360"/>
+<img src="https://raw.githubusercontent.com/devfun052017/pin_entry_field/main/images/1.png" width="360"/>
 
 ## About PinInputType.password
-<img src="images/2.png" width="360"/>
+<img src="https://raw.githubusercontent.com/devfun052017/pin_entry_field/main/images/2.png" width="360"/>
 
 ## About PinInputType.custom
-<img src="images/3.png" width="360"/>
+<img src="https://raw.githubusercontent.com/devfun052017/pin_entry_field/main/images/3.png" width="360"/>
