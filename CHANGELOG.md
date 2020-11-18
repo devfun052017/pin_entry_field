@@ -1,3 +1,3 @@
-## 0.0.3 - 11/18/2020
+## 0.0.4 - 11/18/2020
 
-* Change Readme image
+* Export to Pin Entry

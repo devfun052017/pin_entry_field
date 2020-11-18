@@ -1,6 +1,6 @@
 name: pin_entry_field
 description: Customized Pin Entry Text field for flutter. Uses a hidden TextField to handle input, hence behaves much in the same was as an TextField on the screen and supports similar features.
-version: 0.0.3
+version: 0.0.4
 author: Simon Lê<devfun052017@gmail.com>
 homepage: https://github.com/devfun052017/pin_entry_field.git
 
