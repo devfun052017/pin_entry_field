@@ -1,4 +1,3 @@
-library pin_entry_field;
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

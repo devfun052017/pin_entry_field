@@ -94,7 +94,7 @@ packages:
       path: "/Users/lesimon/Documents/working/Flutters/pin_entry_field"
       relative: false
     source: path
-    version: "0.0.1"
+    version: "0.0.3"
   sky_engine:
     dependency: transitive
     description: flutter

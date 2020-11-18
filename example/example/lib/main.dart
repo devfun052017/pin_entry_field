@@ -1,8 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:pin_entry_field/pin_entry_field.dart';
-import 'package:pin_entry_field/pin_entry_style.dart';
-import 'package:pin_entry_field/pin_input_type.dart';
+
+import 'package:pin_entry_field/pin_entry.dart';
 
 void main() {
   runApp(MyApp());
