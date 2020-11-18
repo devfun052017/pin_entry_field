@@ -1,3 +1,3 @@
-## 0.0.2 - 11/18/2020
+## 0.0.3 - 11/18/2020
 
-* Add input type
+* Change Readme image
