@@ -27,3 +27,5 @@ PinEntryField(
       ),
     )
 ```
+## About
+<img src="https://cloud.degoo.com/share/4pQ4olpQxRqbCY" width="360" height="640" />
