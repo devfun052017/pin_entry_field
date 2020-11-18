@@ -28,4 +28,4 @@ PinEntryField(
     )
 ```
 ## About
-<img src="https://cloud.degoo.com/share/4pQ4olpQxRqbCY" width="360" height="640" />
+<img src="images/1.png" width="360" height="640" />
