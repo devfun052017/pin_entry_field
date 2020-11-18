@@ -28,4 +28,4 @@ PinEntryField(
     )
 ```
 ## About
-<img src="images/1.png" width="360" height="640" />
+<img src="images/1.png" />
