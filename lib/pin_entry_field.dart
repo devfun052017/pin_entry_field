@@ -2,6 +2,7 @@ library pin_entry_field;
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:pin_entry_field/pin_input_type.dart';
 
 import 'pin_entry_style.dart';
 
@@ -12,12 +13,16 @@ class PinEntryField extends StatefulWidget {
   final int fieldCount;
   final PinEntryStyle fieldStyle;
   final ValueChanged<String> onSubmit;
+  final PinInputType inputType;
+  final String pinInputCustom;
 
   PinEntryField({
     this.height = 50,
     this.fieldWidth = 50,
     this.fieldCount = 4,
-    this.fieldStyle,
+    @required this.fieldStyle,
+    this.inputType = PinInputType.none,
+    this.pinInputCustom = "*",
     this.onSubmit,
   });
 
@@ -27,16 +32,16 @@ class PinEntryField extends StatefulWidget {
 
 class _PinEntryFieldState extends State<PinEntryField> {
   FocusNode _focusNode;
-  List<String> textChanged;
+  List<String> pinsInputed;
   bool ending = false;
 
   @override
   void initState() {
     super.initState();
     _focusNode = FocusNode();
-    textChanged = [];
+    pinsInputed = [];
     for (var i = 0; i < widget.fieldCount; i++) {
-      textChanged.add("");
+      pinsInputed.add("");
     }
   }
 
@@ -60,7 +65,6 @@ class _PinEntryFieldState extends State<PinEntryField> {
         ),
         Opacity(
           child: TextField(
-            textInputAction: TextInputAction.done,
             maxLength: widget.fieldCount,
             autofocus: true,
             focusNode: _focusNode,
@@ -108,8 +112,9 @@ class _PinEntryFieldState extends State<PinEntryField> {
         width: widget.fieldWidth,
         alignment: Alignment.center,
         child: Text(
-          textChanged[i],
+          _getPinDisplay(i),
           style: widget.fieldStyle.textStyle,
+          textAlign: TextAlign.center,
         ),
         decoration: BoxDecoration(
           color: widget.fieldStyle.fieldBackgroundColor,
@@ -120,16 +125,32 @@ class _PinEntryFieldState extends State<PinEntryField> {
     );
   }
 
+  String _getPinDisplay(int position) {
+    var display = "";
+    var value = pinsInputed[position];
+    switch (widget.inputType) {
+      case PinInputType.password:
+        display = "*";
+        break;
+      case PinInputType.custom:
+        display = widget.pinInputCustom;
+        break;
+      default:
+        display = value;
+        break;
+    }
+    return value.isNotEmpty ? display : value;
+  }
+
   void _bindTextIntoWidget(String text) {
     ///Reset value
-    for (var i = text.length; i < textChanged.length; i++) {
-      textChanged[i] = "";
+    for (var i = text.length; i < pinsInputed.length; i++) {
+      pinsInputed[i] = "";
     }
     if (text.isNotEmpty) {
       for (var i = 0; i < text.length; i++) {
-        textChanged[i] = text[i];
+        pinsInputed[i] = text[i];
       }
     }
   }
 }
-

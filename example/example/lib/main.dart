@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pin_entry_field/pin_entry_field.dart';
 import 'package:pin_entry_field/pin_entry_style.dart';
+import 'package:pin_entry_field/pin_input_type.dart';
 
 void main() {
   runApp(MyApp());
@@ -29,13 +30,11 @@ class MyHomePage extends StatefulWidget {
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
-
 }
 
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
@@ -45,26 +44,24 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             PinEntryField(
+              inputType: PinInputType.custom,
+              pinInputCustom: "-",
               onSubmit: (text) {
                 print(text);
               },
-              fieldCount: 4,
-              fieldWidth: 50,
-              height: 60,
+              fieldCount: 6,
+              fieldWidth: 40,
+              height: 50,
               fieldStyle: PinEntryStyle(
-                  textStyle: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                      fontWeight: FontWeight.w600
-                  ),
+                  textStyle:
+                      TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.w600),
                   fieldBackgroundColor: Colors.orangeAccent,
                   fieldBorder: Border.all(
                     color: Colors.pink,
                     width: 2,
                   ),
                   fieldBorderRadius: BorderRadius.circular(10),
-                  fieldPadding: 20
-              ),
+                  fieldPadding: 20),
             )
           ],
         ),
